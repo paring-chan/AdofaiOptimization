@@ -1,5 +1,8 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
+#if ML
+using MelonLoader;
+#endif
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -33,3 +36,8 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+#if ML
+[assembly: MelonGame("7th Beat Games", "A Dance of Fire and Ice")]
+[assembly: MelonInfo(typeof(AdofaiOptimization.AdofaiOptimization), "Adofai Optimization", "1.0.0", "pikokr")]
+#endif

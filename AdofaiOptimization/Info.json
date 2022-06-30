@@ -1,0 +1,9 @@
+{
+  "Id": "AdofaiOptimization",
+  "DisplayName": "Adofai Optimization",
+  "Version": "1.0.0",
+  "AssemblyName": "AdofaiOptimization.dll",
+  "EntryMethod": "AdofaiOptimization.AdofaiOptimization.Load",
+  "Author": "pikokr",
+  "Repository": "https://raw.githubusercontent.com/pikokr/AdofaiOptimization/main/Repository.json"
+}

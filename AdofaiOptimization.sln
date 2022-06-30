@@ -4,13 +4,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdofaiOptimization", "Adofa
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Debug_UMM|Any CPU = Debug_UMM|Any CPU
+		Release_UMM|Any CPU = Release_UMM|Any CPU
+		Release_ML|Any CPU = Release_ML|Any CPU
+		Debug_ML|Any CPU = Debug_ML|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0280E695-0232-49E6-ADB2-BE4DEB5AC65D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0280E695-0232-49E6-ADB2-BE4DEB5AC65D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0280E695-0232-49E6-ADB2-BE4DEB5AC65D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0280E695-0232-49E6-ADB2-BE4DEB5AC65D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0280E695-0232-49E6-ADB2-BE4DEB5AC65D}.Debug_UMM|Any CPU.ActiveCfg = Debug_UMM|Any CPU
+		{0280E695-0232-49E6-ADB2-BE4DEB5AC65D}.Debug_UMM|Any CPU.Build.0 = Debug_UMM|Any CPU
+		{0280E695-0232-49E6-ADB2-BE4DEB5AC65D}.Release_UMM|Any CPU.ActiveCfg = Release_UMM|Any CPU
+		{0280E695-0232-49E6-ADB2-BE4DEB5AC65D}.Release_UMM|Any CPU.Build.0 = Release_UMM|Any CPU
+		{0280E695-0232-49E6-ADB2-BE4DEB5AC65D}.Release_ML|Any CPU.ActiveCfg = Release_ML|Any CPU
+		{0280E695-0232-49E6-ADB2-BE4DEB5AC65D}.Release_ML|Any CPU.Build.0 = Release_ML|Any CPU
+		{0280E695-0232-49E6-ADB2-BE4DEB5AC65D}.Debug_ML|Any CPU.ActiveCfg = Debug_ML|Any CPU
+		{0280E695-0232-49E6-ADB2-BE4DEB5AC65D}.Debug_ML|Any CPU.Build.0 = Debug_ML|Any CPU
 	EndGlobalSection
 EndGlobal
