@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using HarmonyLib;
 using UnityEngine;
@@ -19,8 +17,10 @@ namespace AdofaiOptimization.Patches
 
                     if (!source.clip || !source.isPlaying)
                     {
+                        source.Stop();
                         source.clip = null;
-                        
+                        source.loop = false;
+
                         source.gameObject.SetActive(false);
                         
                         _sources.Enqueue(source);
