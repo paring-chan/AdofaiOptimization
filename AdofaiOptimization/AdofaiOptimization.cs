@@ -2,6 +2,7 @@
 using MelonLoader;
 #endif
 #if UMM
+using System.Reflection;
 using UnityModManagerNet;
 #endif
 

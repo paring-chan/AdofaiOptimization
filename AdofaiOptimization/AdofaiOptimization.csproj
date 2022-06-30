@@ -11,6 +11,7 @@
         <AssemblyName>AdofaiOptimization</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
+        <LangVersion>9.0</LangVersion>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug_UMM|AnyCPU' ">
         <DebugType>pdbonly</DebugType>
@@ -117,9 +118,6 @@
         </Reference>
         <Reference Include="Mono.WebBrowser">
             <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\A Dance of Fire and Ice\A Dance of Fire and Ice_Data\Managed\Mono.WebBrowser.dll</HintPath>
-        </Reference>
-        <Reference Include="mscorlib">
-            <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\A Dance of Fire and Ice\A Dance of Fire and Ice_Data\Managed\mscorlib.dll</HintPath>
         </Reference>
         <Reference Include="Novell.Directory.Ldap">
             <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\A Dance of Fire and Ice\A Dance of Fire and Ice_Data\Managed\Novell.Directory.Ldap.dll</HintPath>
