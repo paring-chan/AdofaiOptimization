@@ -2,8 +2,8 @@
   "Releases": [
     {
       "Id": "AdofaiOptimization",
-      "Version": "1.0.0",
-      "DownloadUrl": ""
+      "Version": "1.0.1",
+      "DownloadUrl": "https://github.com/pikokr/AdofaiOptimization/releases/download/1.0.1/AdofaiOptimization-1.0.1.zip"
     }
   ]
 }
