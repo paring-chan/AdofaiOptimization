@@ -425,7 +425,7 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
-      <Content Include="Info.json" />
+        <Content Include="Info.json" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -435,5 +435,17 @@
     <Target Name="AfterBuild">
     </Target>
     -->
+
+    <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release_UMM' ">
+        <PropertyGroup>
+            <CurrentTime>$([System.DateTime]::Now.ToString(yyyy.MM.dd hh-mm-ss))</CurrentTime>
+            <OutputDirectoryName>$(OutputPath)/../Build/UMM/$(CurrentTime)</OutputDirectoryName>
+        </PropertyGroup>
+
+        <Delete Files="$(OutputDirectoryName)" ContinueOnError="true" />
+        <Copy SourceFiles="$(OutputPath)/AdofaiOptimization.dll" DestinationFolder="$(OutputDirectoryName)" />
+        <Copy SourceFiles="Info.json" DestinationFolder="$(OutputDirectoryName)" />
+        <ZipDirectory DestinationFile="$(OutputPath)/../../Release/AdofaiOptimization $(CurrentTime).zip" SourceDirectory="$(OutputDirectoryName)" />
+    </Target>
 
 </Project>
