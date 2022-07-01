@@ -82,7 +82,9 @@ namespace AdofaiOptimization.Patches
             {
                 foreach (var source in __instance.liveSources)
                 {
+                    source.Stop();
                     source.clip = null;
+                    source.loop = false;
                     _sources.Enqueue(source);
                 }
 
