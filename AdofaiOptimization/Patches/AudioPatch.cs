@@ -15,14 +15,14 @@ namespace AdofaiOptimization.Patches
                 {
                     if (!source) return true;
 
-                    if (!source.clip || !source.isPlaying)
+                    if (!source.clip || (!source.isPlaying && !_paused))
                     {
                         source.Stop();
                         source.clip = null;
                         source.loop = false;
 
                         source.gameObject.SetActive(false);
-                        
+
                         _sources.Enqueue(source);
 
                         return true;
@@ -52,23 +52,43 @@ namespace AdofaiOptimization.Patches
 
         private static Queue<AudioSource> _sources;
 
-        private static AudioSource template;
+        private static AudioSource _template;
+
+        private static bool _paused;
+
+        [HarmonyPatch(typeof(PauseMenu), "OnEnable")]
+        private static class PauseMenuOnEnable
+        {
+            private static void Postfix()
+            {
+                _paused = true;
+            }
+        }
+        
+        [HarmonyPatch(typeof(PauseMenu), "OnDisable")]
+        private static class PauseMenuOnDisable
+        {
+            private static void Postfix()
+            {
+                _paused = false;
+            }
+        }
 
         [HarmonyPatch(typeof(AudioManager), "Awake")]
         private static class AudioManagerAwake
         {
             private static void Postfix(AudioManager __instance, GameObject ___audioSourceContainer)
             {
-                if (!template)
+                if (!_template)
                 {
-                    template = __instance.audioSourcePrefab.GetComponent<AudioSource>();
+                    _template = __instance.audioSourcePrefab.GetComponent<AudioSource>();
                 }
 
                 _sources = new();
-                
+
                 for (int i = 0; i < 100; i++)
                 {
-                    var item = Object.Instantiate(template, ___audioSourceContainer.transform);
+                    var item = Object.Instantiate(_template, ___audioSourceContainer.transform);
                     item.gameObject.SetActive(false);
                     _sources.Enqueue(item);
                 }
@@ -104,14 +124,14 @@ namespace AdofaiOptimization.Patches
 
                 if (_sources.Count == 0)
                 {
-                    source = Object.Instantiate(template, ___audioSourceContainer.transform);
+                    source = Object.Instantiate(_template, ___audioSourceContainer.transform);
                 }
                 else
                 {
                     source = _sources.Dequeue();
                     source.gameObject.SetActive(true);
                 }
-                
+
                 if ((object)customClip == null)
                 {
                     customClip = __instance.FindOrLoadAudioClip(clipName);
