@@ -39,5 +39,5 @@ using MelonLoader;
 
 #if ML
 [assembly: MelonGame("7th Beat Games", "A Dance of Fire and Ice")]
-[assembly: MelonInfo(typeof(AdofaiOptimization.AdofaiOptimization), "Adofai Optimization", "1.0.3", "pikokr")]
+[assembly: MelonInfo(typeof(AdofaiOptimization.AdofaiOptimization), "Adofai Optimization", "1.0.4", "pikokr")]
 #endif
